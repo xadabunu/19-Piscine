@@ -6,14 +6,21 @@
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 09:34:14 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/07 11:09:46 by xadabunu         ###   ########.fr       */
+/*   Updated: 2022/07/08 13:19:34 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putnbr(int nb)
 {
 	char	c;
 
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
 	if (nb < 0)
 	{
 		write(1, "-", 1);

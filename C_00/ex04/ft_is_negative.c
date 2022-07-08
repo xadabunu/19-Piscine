@@ -6,9 +6,11 @@
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:13:33 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/06 16:23:13 by xadabunu         ###   ########.fr       */
+/*   Updated: 2022/07/07 21:45:40 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_is_negative(int n)
 {

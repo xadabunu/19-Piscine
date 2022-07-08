@@ -6,9 +6,11 @@
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 16:05:39 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/06 16:12:02 by xadabunu         ###   ########.fr       */
+/*   Updated: 2022/07/07 21:45:16 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_print_numbers(void)
 {

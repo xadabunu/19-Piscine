@@ -6,9 +6,11 @@
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:39:31 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/06 15:39:42 by xadabunu         ###   ########.fr       */
+/*   Updated: 2022/07/07 21:43:12 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_print_alphabet(void)
 {
