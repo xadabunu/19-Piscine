@@ -6,7 +6,7 @@
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 21:20:18 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/17 22:00:22 by xadabunu         ###   ########.fr       */
+/*   Updated: 2022/07/18 15:22:02 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ unsigned int	ft_strslen(char **strs, int size)
 	return (ctr);
 }
 
-char	*ft_alloc(char *str, char **strs, char *sep, int size)
+char	*ft_assign(char *str, char **strs, char *sep, int size)
 {
 	int	i;
 	int	j;
@@ -85,7 +85,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	sep_len = ft_strlen(sep);
 	len = ft_strslen(strs, size);
 	str = malloc(sizeof(char) * (len + sep_len));
-	str = ft_alloc(str, strs, sep, size);
+	str = ft_assign(str, strs, sep, size);
 	return (str);
 }
 /*

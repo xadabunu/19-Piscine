@@ -6,7 +6,7 @@
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:41:03 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/14 21:03:12 by xadabunu         ###   ########.fr       */
+/*   Updated: 2022/07/18 15:13:01 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ char	*ft_strdup(char *src)
 	char	*copy;
 	int		i;
 
-	copy = malloc(sizeof(char) * ft_strlen(src));
+	copy = malloc(sizeof(*copy) * (ft_strlen(src) + 1));
+	if (!copy)
+		return (0);
 	i = 0;
 	while (src[i])
 	{
