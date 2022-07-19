@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_str.h                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 18:07:25 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/19 18:20:17 by xadabunu         ###   ########.fr       */
+/*   Created: 2022/07/19 18:07:01 by xadabunu          #+#    #+#             */
+/*   Updated: 2022/07/19 19:58:50 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LOO
-# define LOO
+#include <stdlib.h>
+#include "ft_stock_str.h"
 
-struct s_stock_str	*ft_strs_to_tab(int ac, char **av);
-void				ft_show_tab(struct s_stock_str *par);
-
-typedef struct	s_stock_str
+int	main(void)
 {
-	int		size;
-	char	*str;
-	char	*copy;
-}	t_stock_str;
+	char	**strs;
 
-#endif
+	strs = malloc(5 * sizeof (*strs));
+	strs[0] = "premier";
+	strs[1] = "celui d'après";
+	strs[2] = "encore ensuite";
+	strs[3] = "c'est bientot fini";
+	strs[4] = "vOila c le denier";
+	ft_show_tab(ft_strs_to_tab(5, strs));
+	free(strs);
+	return (0);
+}

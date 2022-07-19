@@ -6,7 +6,7 @@
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 16:33:31 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/19 17:05:31 by xadabunu         ###   ########.fr       */
+/*   Updated: 2022/07/19 19:28:03 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_get_len(t_stock_str *par)
 	int	i;
 
 	i = 0;
-	while (par[i].str)
+	while (par[i].str != 0)
 		++i;
 	return (i);
 }
@@ -59,5 +59,6 @@ void	ft_show_tab(struct s_stock_str *par)
 		ft_putnbr(par[i].size);
 		write(1, "\n", 1);
 		ft_putstr(par[i].copy);
+		++i;
 	}
 }
