@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 23:02:42 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/21 23:02:51 by xadabunu         ###   ########.fr       */
+/*   Created: 2022/07/22 12:34:56 by xadabunu          #+#    #+#             */
+/*   Updated: 2022/07/22 12:44:11 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ char	**ft_assign(char *str, char **tab, int size, char *set)
 		}
 		++i;
 	}
+	tab[n] = 0;
 	return (tab);
 }
 
@@ -90,6 +91,8 @@ char	**ft_split(char *str, char *charset)
 	int		len;
 	int		pos;
 
+	if (!str || !charset)
+		return (0);
 	size = str_count(str, charset);
 	tab = malloc(sizeof (char *) * (size + 1));
 	if (!tab)
