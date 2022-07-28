@@ -6,7 +6,7 @@
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 21:20:18 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/18 15:22:02 by xadabunu         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:07:52 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ int	ft_strlen(char *str)
 
 unsigned int	ft_strslen(char **strs, int size)
 {
-	unsigned int	i;
+	int				i;
 	unsigned int	j;
 	unsigned int	ctr;
 
 	i = 0;
 	j = 0;
+	ctr = 0;
 	while (i < size)
 	{
 		while (strs[i][j])
@@ -57,21 +58,33 @@ char	*ft_assign(char *str, char **strs, char *sep, int size)
 	{
 		while (strs[i][j])
 		{
-			str[k] = strs[i][j];
-			++k;
+			str[k++] = strs[i][j];
 			++j;
 		}
 		j = 0;
 		while (i < size - 1 && sep[j])
-		{
-			str[k] = sep[j];
-			++j;
-			++k;
-		}
+			str[k++] = sep[j++];
 		++i;
 		j = 0;
 	}
+	str[k] = '\0';
 	return (str);
+}
+
+int	ft_check_strs(char **strs, int size)
+{
+	int	i;
+
+	if (!strs)
+		return (0);
+	i = 0;
+	while (i < size)
+	{
+		if (strs[i] == 0)
+			return (0);
+		++i;
+	}
+	return (1);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
@@ -81,23 +94,18 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		len;
 
 	if (size == 0)
-		return ("");
+	{
+		str = malloc(sizeof(*str));
+		str[0] = '\0';
+		return (str);
+	}
+	if (!ft_check_strs(strs, size) || !sep)
+		return (0);
 	sep_len = ft_strlen(sep);
 	len = ft_strslen(strs, size);
-	str = malloc(sizeof(char) * (len + sep_len));
+	str = malloc(sizeof(char) * (len + (sep_len * (size - 1)) + 1));
+	if (!str)
+		return (0);
 	str = ft_assign(str, strs, sep, size);
 	return (str);
 }
-/*
-int	main(void)
-{
-	char **str;
-	char sep[] = "yo";
-
-	str = malloc(sizeof(*str) * 3);
-	str[0] = "premier";
-	str[1] = "deuxieme";
-	str[2] = "troi sieme";
-	printf("%s", ft_strjoin(3, str, sep));
-}
-*/
