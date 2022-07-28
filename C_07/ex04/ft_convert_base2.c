@@ -6,7 +6,7 @@
 /*   By: xadabunu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:38:22 by xadabunu          #+#    #+#             */
-/*   Updated: 2022/07/18 17:50:54 by xadabunu         ###   ########.fr       */
+/*   Updated: 2022/07/25 17:22:04 by xadabunu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,10 @@ int	ft_atoi_base(char *str, char *base)
 			sign *= -1;
 		++i;
 	}
-	while (str[i])
+	while (str[i] && ft_get_index(str[i], base) != -1)
 	{
-		if (ft_get_index(str[i], base) == -1)
-			return (0);
 		res = res * ft_strlen(base) + ft_get_index(str[i], base);
 		++i;
 	}
-	return (res);
+	return (res * sign);
 }
